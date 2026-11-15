@@ -1,0 +1,63 @@
+.wifi-bands-mode {
+    border-radius: 9999px;
+    padding: 4px 14px;
+}
+
+.wifi-bands-mode:checked {
+    background-color: rgba(255, 255, 255, 0.22);
+}
+
+.wifi-bands-note {
+    font-size: 0.9em;
+}
+
+.wifi-bands-pill {
+    background-color: rgba(128, 128, 128, 0.2);
+    border-radius: 9999px;
+    padding: 1px;
+}
+
+.wifi-bands-pill-text {
+    font-size: 0.8em;
+    padding: 1px 8px;
+    border-radius: 9999px;
+}
+
+.wifi-bands-pill-active {
+    background-color: rgba(128, 128, 128, 0.4);
+}
+
+.wifi-bands-pill-divider {
+    width: 1px;
+    margin: 4px 0;
+    background-color: rgba(128, 128, 128, 0.35);
+}
+
+.wifi-bands-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 5px;
+    border: 0 solid transparent;
+}
+
+.wifi-bands-dot-good {
+    background-color: #57e389;
+    border-color: #57e389;
+}
+
+.wifi-bands-dot-weak {
+    background-color: #f6d32d;
+    border-color: #f6d32d;
+}
+
+.wifi-bands-dot-poor {
+    background-color: #ff7b63;
+    border-color: #ff7b63;
+}
+
+.wifi-bands-dot-hollow {
+    width: 4px;
+    height: 4px;
+    border-width: 2px;
+    background-color: transparent;
+}

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 16 16">
+  <defs>
+    <clipPath id="left">
+      <rect x="0" y="0" width="8" height="16"/>
+    </clipPath>
+  </defs>
+  <g fill="none" stroke="#2e3436" stroke-width="1.4" stroke-linecap="round">
+    <path d="M 3.05 4.55 A 7 7 0 0 1 12.95 4.55"/>
+    <path d="M 4.82 6.32 A 4.5 4.5 0 0 1 11.18 6.32"/>
+    <path d="M 6.59 8.09 A 2 2 0 0 1 9.41 8.09"/>
+  </g>
+  <circle cx="8" cy="9.6" r="0.95" fill="#2e3436"/>
+  <rect x="1.4" y="11.5" width="13.2" height="3.7" rx="1.85" fill="none" stroke="#2e3436" stroke-width="0.9"/>
+  <rect x="1.4" y="11.5" width="13.2" height="3.7" rx="1.85" fill="#2e3436" clip-path="url(#left)"/>
+  <g font-family="Adwaita Sans, Cantarell, sans-serif" font-weight="bold" font-size="2.7" text-anchor="middle">
+    <text x="4.7" y="14.3" fill="#fff">5</text>
+    <text x="11.3" y="14.3" fill="#2e3436">2.4</text>
+  </g>
+</svg>

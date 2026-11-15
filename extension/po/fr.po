@@ -1,0 +1,84 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wifi-bands\n"
+"Language: fr\n"
+"PO-Revision-Date: 2026-11-15 16:00+0100\n"
+"Last-Translator: d101c\n"
+"Language-Team: French\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "5 GHz"
+msgstr "5 GHz"
+
+msgid "5"
+msgstr "5"
+
+msgid "2.4"
+msgstr "2,4"
+
+msgid "2.4 GHz"
+msgstr "2,4 GHz"
+
+msgid "very weak signal"
+msgstr "signal très faible"
+
+msgid "weak signal"
+msgstr "signal faible"
+
+msgid "refused you before"
+msgstr "a déjà refusé la connexion"
+
+msgid "radar-sensitive channel"
+msgstr "canal sensible aux radars"
+
+msgid "busy channel"
+msgstr "canal encombré"
+
+msgid "keeps switching"
+msgstr "changements fréquents"
+
+msgid "Band"
+msgstr "Bande"
+
+#. Translators: %s is "Auto", "5 GHz" or "2.4 GHz".
+msgid "Band: %s"
+msgstr "Bande : %s"
+
+msgid "Band: %s, one access point"
+msgstr "Bande : %s, un seul point d’accès"
+
+msgid "Auto"
+msgstr "Auto"
+
+msgid "Stay on this access point"
+msgstr "Rester sur ce point d’accès"
+
+msgid "5 GHz, channel %d"
+msgstr "5 GHz, canal %d"
+
+msgid "2.4 GHz, channel %d"
+msgstr "2,4 GHz, canal %d"
+
+msgid "%d dBm"
+msgstr "%d dBm"
+
+msgid "connected"
+msgstr "connecté"
+
+msgid "This network is not on that band from here."
+msgstr "Ce réseau n’est pas sur cette bande depuis ici."
+
+msgid "Changing the band…"
+msgstr "Changement de bande…"
+
+msgid "Waiting for the connection…"
+msgstr "En attente de la connexion…"
+
+msgid "Could not change the setting."
+msgstr "Impossible de modifier le réglage."
+
+msgid "That access point refused the connection. Back to the previous setting."
+msgstr "Ce point d’accès a refusé la connexion. Retour au réglage précédent."

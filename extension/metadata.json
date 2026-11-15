@@ -1,0 +1,18 @@
+{
+  "uuid": "wifi-bands@griffit.gmail.com",
+  "name": "Wi-Fi Bands",
+  "description": "Shows which bands (5 and 2.4 GHz) each Wi-Fi network is on, and lets you choose the band of the one you are connected to, from the Wi-Fi menu of Quick Settings.\n\nIn the list, every network gets a small pill with its bands; the band in use is the lighter segment. A Band entry under the list shows the access points of the network you are connected to (channel, signal, and a coloured dot saying whether the access point looks good, weak or poor, with the reason), and offers Auto, 5 GHz or 2.4 GHz, and staying on one access point.\n\nIt is meant for routers that keep moving a laptop between their 2.4 and 5 GHz radios, or that put 5 GHz on a channel shared with radars and drop everyone when one is detected.\n\nIf the router does not let you connect within 25 seconds of a change, the previous setting is put back and that access point is marked as having refused you. Only the profile of the network in use is changed.\n\nThe extension reads and changes Wi-Fi profiles through NetworkManager's own library (libnm); it runs no command and adds nothing to the top bar. With several Wi-Fi cards only the Band entry of the card in use is offered.",
+  "shell-version": [
+    "45",
+    "46",
+    "47",
+    "48",
+    "49",
+    "50",
+    "51"
+  ],
+  "settings-schema": "org.gnome.shell.extensions.wifi-bands",
+  "gettext-domain": "wifi-bands",
+  "url": "https://github.com/d101c/wifi-bands",
+  "version-name": "0.1"
+}

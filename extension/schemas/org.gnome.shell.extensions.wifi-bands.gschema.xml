@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.wifi-bands" path="/org/gnome/shell/extensions/wifi-bands/">
+    <key name="failures" type="a{si}">
+      <default>{}</default>
+      <summary>Failed connections</summary>
+      <description>How many times an access point refused a connection after a band change, per BSSID. Forgotten once a connection to it works.</description>
+    </key>
+    <key name="pending" type="a{ss}">
+      <default>{}</default>
+      <summary>Change waiting for its check</summary>
+      <description>A band change that was made and not yet confirmed (profile, new and previous settings), kept so that it is checked, and taken back if it failed, even if the extension was turned off meanwhile.</description>
+    </key>
+  </schema>
+</schemalist>
