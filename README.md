@@ -101,6 +101,17 @@ ACTIONS=1 tools/headless/run.sh       # also changes the band, once refused
 The headless run uses the real NetworkManager: with `ACTIONS=1` the Wi-Fi
 reconnects a few times, and the profile is put back at the end.
 
+## Roadmap and issues
+
+Bugs, ideas, planned work and things still to test are tracked in the
+[GitHub issues](https://github.com/d101c/wifi-bands/issues); what is planned for
+the next version is grouped in a milestone.
+
+- **Report a bug:** open an issue with your distribution, GNOME Shell version,
+  what you did, what you expected and what happened, plus any error shown by
+  `journalctl -b /usr/bin/gnome-shell`.
+- **Suggest an idea:** open an issue that describes what you want to do.
+
 ## Licence
 
 GPL-2.0-or-later.

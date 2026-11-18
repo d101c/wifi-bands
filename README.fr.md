@@ -113,6 +113,18 @@ ACTIONS=1 tools/headless/run.sh       # change aussi la bande, avec un refus
 Le banc d'essai utilise le vrai NetworkManager : avec `ACTIONS=1`, le Wi-Fi se
 reconnecte plusieurs fois, et le profil est remis à la fin.
 
+## Feuille de route et tickets
+
+Défauts, idées, travail prévu et essais encore à faire sont suivis dans les
+[tickets GitHub](https://github.com/d101c/wifi-bands/issues) ; ce qui est
+prévu pour la prochaine version est regroupé dans un jalon (milestone).
+
+- **Signaler un défaut :** ouvrez un ticket avec votre distribution, votre
+  version de GNOME Shell, ce que vous avez fait, ce que vous attendiez et ce
+  qui s'est passé, avec les erreurs affichées par
+  `journalctl -b /usr/bin/gnome-shell`.
+- **Proposer une idée :** ouvrez un ticket qui décrit ce que vous voulez faire.
+
 ## Licence
 
 GPL-2.0-or-later.
