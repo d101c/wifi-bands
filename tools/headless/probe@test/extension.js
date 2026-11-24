@@ -8,6 +8,9 @@
 //   pin <on|off>      flip the "stay on this access point" switch
 //   state <name>      write what the extension shows to <name>.json
 //   shot <name>       screenshot of the whole screen to <name>.png
+//   closing           what a closing session does: the Shell destroys its
+//                     menus without disabling anything, then the Wi-Fi
+//                     card goes away
 import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
 import Shell from 'gi://Shell';
@@ -118,6 +121,14 @@ export default class Probe {
                 }
                 stream.close(null);
             });
+            break;
+        }
+        case 'closing': {
+            const client = ext._wifi._client;
+            const device = ext._wifi._device;
+            console.log('probe: session closing');
+            qs.destroy();
+            client.emit('device-removed', device);
             break;
         }
         default:

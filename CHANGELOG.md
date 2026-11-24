@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Closing the session no longer leaves "already disposed" errors in the GNOME
+  Shell log: the extension stops as soon as its Band entry is destroyed.
+
 ## 0.1
 
 - A neutral pill per network in the Wi-Fi menu: the bands it is on, the band in

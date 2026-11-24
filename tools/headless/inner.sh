@@ -126,6 +126,17 @@ probe state s8
 expect "disable removes the dots" "$(field s8 rows)" "[]"
 expect "disable removes the Band entry" "$(field s8 bandVisible)" false
 
+# A closing session: the Shell destroys the menus without calling disable(),
+# and the Wi-Fi card still reports changes. Nothing of ours may run on them.
+gnome-extensions enable "$UUID"; sleep 3
+probe open; sleep 1
+probe wifi; sleep 3
+probe state s9
+expect "closing: Band entry was there" "$(field s9 bandVisible)" true
+probe closing; sleep 2
+expect "closing: nothing of ours runs on the destroyed menu" \
+    "$(sed -n '/probe: session closing/,$p' "$OUT/shell.log" | grep -c "$UUID")" 0
+
 [ -e "$OUT/error" ] && { echo "FAIL probe errors:"; cat "$OUT/error"; failed=1; }
 echo "=== shell.log (extension lines)"
 grep -i -E "wifi-bands|JS ERROR|probe" "$OUT/shell.log" | tail -20

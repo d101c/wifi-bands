@@ -112,36 +112,45 @@ export default class WifiBands extends Extension {
     }
 
     disable() {
+        // Unless the Shell has taken the menu away already.
+        if (this._item) {
+            this._toggle.menu.disconnect(this._menuId);
+            for (const [row, {box, destroyId}] of this._chips) {
+                row.disconnect(destroyId);
+                box.destroy();
+                if (row._selectedIcon)
+                    row.set_child_above_sibling(row._selectedIcon, null);
+            }
+            this._note.destroy();
+            this._pinSwitch.disconnect(this._pinId);
+            this._pinSwitch.destroy();
+            this._rows.destroy();
+            this._item.destroy();
+        }
+        this._release();
+        this._menuId = 0;
+        this._chips = null;
+        this._toggle = null;
+    }
+
+    // Stops everything that could still reach the menu. Runs at disable(),
+    // and as soon as the menu is destroyed: GNOME Shell destroys it itself
+    // when the session closes, without calling disable(), and the Wi-Fi card
+    // still reports changes after that.
+    _release() {
         this._generation++;
         this._queued = null;
         this._stopWatch();
         this._stopTimer();
-        if (this._menuId) {
-            this._toggle.menu.disconnect(this._menuId);
-            this._menuId = 0;
-        }
-        for (const [row, {box, destroyId}] of this._chips ?? []) {
-            row.disconnect(destroyId);
-            box.destroy();
-            if (row._selectedIcon)
-                row.set_child_above_sibling(row._selectedIcon, null);
-        }
-        this._chips = null;
-        this._note?.destroy();
-        this._note = null;
-        this._pinSwitch?.disconnect(this._pinId);
-        this._pinSwitch?.destroy();
-        this._pinSwitch = null;
-        this._rows?.destroy();
-        this._rows = null;
-        this._item?.destroy();
-        this._item = null;
-        this._buttons = null;
-        this._rated = null;
         this._wifi?.destroy();
         this._wifi = null;
+        this._item = null;
+        this._rows = null;
+        this._note = null;
+        this._pinSwitch = null;
+        this._buttons = null;
+        this._rated = null;
         this._settings = null;
-        this._toggle = null;
         // A change still being checked stays in the settings: it is checked
         // (and taken back if it failed) the next time the extension starts.
         this._change = null;
@@ -150,6 +159,8 @@ export default class WifiBands extends Extension {
     _start() {
         this._buildMenu();
         this._menuId = this._toggle.menu.connect('open-state-changed', (_menu, open) => {
+            if (!this._item)
+                return;
             if (open) {
                 this._refresh();
                 this._timerId = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, REFRESH_SECONDS, () => {
@@ -218,6 +229,7 @@ export default class WifiBands extends Extension {
         const position = this._toggle.menu._getMenuItems().indexOf(this._toggle._itemsSection) + 1;
         this._toggle.menu.addMenuItem(this._item, position || undefined);
         this._item.visible = false;
+        this._item.connect('destroy', () => this._release());
     }
 
     _say(text) {
